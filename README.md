@@ -25,13 +25,12 @@ page  = Backbone.history.params['page']		// page  : '1'
 Colonne passes all Backbone tests for the router, copied at `test/router.js`. The new functionality is tested at the end of the same file.
 
 
-## Dependencies
+### Dependencies
 
 `Underscore 1.3.1`
-
 `Backbone 0.9.2`
 
 
-## License
+### License
 
 Colonne is covered by the MIT License
