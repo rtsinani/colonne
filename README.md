@@ -9,9 +9,11 @@ Ported from [sammy.js](https://github.com/quirkey/sammy).
 
 Just add the script after `backbone.js`, and the functionality should be ready to use.
 
-Let's say, you navigate to a URL fragment `/products/search?names=apple&names=nectarine&page=1`; you can then call:
+Let's say, you navigate to a URL fragment `/products/search?names=apple&names=nectarine&page=1` you can then call:
 
-```JavasScript
+```js
+// URL fragment: /products/search?names=apple&names=nectarine&page=1
+
 path  = Backbone.history.path   			// path  : 'products/search'
 names = Backbone.history.params['names']    // names : ['apple', 'nectarine']
 page  = Backbone.history.params['page']		// page  : '1'
