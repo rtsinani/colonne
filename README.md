@@ -27,8 +27,7 @@ Colonne passes all Backbone tests for the router, copied at `test/router.js`. Th
 
 ### Dependencies
 
-`Underscore 1.3.1`
-`Backbone 0.9.2`
+`Underscore 1.3.1`, `Backbone 0.9.2`
 
 
 ### License
