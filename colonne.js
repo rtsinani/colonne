@@ -2,7 +2,7 @@
 	
 	var Colonne = window.Colonne = {};
 	
-	Colonne.VERSION = '0.0.1';
+	Colonne.VERSION = '0.0.2';
 	
 	var _superLoadUrl = Backbone.History.prototype.loadUrl,
 		_decode = function( str ) { return decodeURIComponent((str || '').replace(/\+/g, ' ')); };
@@ -51,8 +51,35 @@
 				}
 			}
 			return params;
-		}
+		},
 		
+		/*
+		 * Navigates to a given path with a params objects, that gets translated to a query string
+		 */
+		navigateWith: function (path, params, options) {
+			var pathTo = this.pathWith(path, params);
+			this.navigate(pathTo, options);
+		},
+		
+		/*
+		 * Builds the path to navigate to from a given path with a params objects, that gets translated to a query string
+		 */
+		pathWith: function (path, params) {
+			if (!params) return path;
+			var pathTo = [],
+				value;
+			for (var key in params) {
+				value = params[key];
+				if (_.isArray(value)) {
+					for (var i = 0, val; val = value[i]; i++) {
+						pathTo.push(key + "=" + val);
+					}
+				} else {
+					pathTo.push(key + "=" + value);
+				}
+			}
+			return path + "?" + pathTo.join('&');
+		}
 		
 	});
 	
