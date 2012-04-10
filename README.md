@@ -14,11 +14,21 @@ Let's say, you navigate to a URL fragment `/products/search?names=apple&names=ne
 ```js
 // URL fragment: /products/search?names=apple&names=nectarine&page=1
 
-path  = Backbone.history.path   			// path  : 'products/search'
-names = Backbone.history.params['names']    // names : ['apple', 'nectarine']
-page  = Backbone.history.params['page']		// page  : '1'
+Backbone.history.path   			// 'products/search'
+Backbone.history.params['names']    // ['apple', 'nectarine']
+Backbone.history.params['page']		// '1'
 
 ```
+
+#### Navigate With
+
+You can also use `Backbone.history.navigateWith` to go to a path with a query string.
+
+```js
+Backbone.history.navigateWith('/products/search', { names: ['apple', 'nectarine'], page: 1 }, {trigger: true});
+Backbone.history.fragment   // 'products/search?names=apple&names=nectarine&page=1');
+```
+
 
 ### Tests
 

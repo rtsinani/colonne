@@ -319,7 +319,6 @@ $(document).ready(function () {
 	})
 	
 	test("Navigate correctly with navigateWith", function () {
-    var route = '/products?name=apple&page=1';
     Backbone.history.navigateWith('/products/search', { names: ['apple', 'nectarine'], page: 1 }, {trigger: true});
     equal(Backbone.history.fragment, 'products/search?names=apple&names=nectarine&page=1');
 		window.location.hash = '';
