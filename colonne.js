@@ -71,14 +71,12 @@
 			for (var key in params) {
 				value = params[key];
 				if (_.isArray(value)) {
-					for (var i = 0, val; val = value[i]; i++) {
-						pathTo.push(key + "=" + val);
-					}
+					pathTo = _.map(value, function (val) { return [key, val].join('='); });
 				} else {
-					pathTo.push(key + "=" + value);
+					pathTo.push( [key, value].join('=') );
 				}
 			}
-			return path + "?" + pathTo.join('&');
+			return [path, pathTo.join('&')].join('?');
 		}
 		
 	});
