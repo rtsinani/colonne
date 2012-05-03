@@ -2,7 +2,7 @@
 	
 	var Colonne = window.Colonne = {};
 	
-	Colonne.VERSION = '0.0.2';
+	Colonne.VERSION = '0.0.3';
 	
 	var _superLoadUrl = Backbone.History.prototype.loadUrl,
 		_decode = function( str ) { return decodeURIComponent((str || '').replace(/\+/g, ' ')); };
