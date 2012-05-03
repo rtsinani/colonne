@@ -57,8 +57,7 @@
 		 * Navigates to a given path with a params objects, that gets translated to a query string
 		 */
 		navigateWith: function (path, params, options) {
-			var pathTo = this.pathWith(path, params);
-			this.navigate(pathTo, options);
+			this.navigate( this.pathWith(path, params), options );
 		},
 		
 		/*
